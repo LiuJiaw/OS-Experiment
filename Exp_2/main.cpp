@@ -134,12 +134,12 @@ void Do() {
 void ShowProcess() {
 	FCFS* fcfsins = FCFS::getinstance();
 	fcfsins->Show();
+	RR* rrins = RR::getinstance();
+	rrins->Show();
 	SJF* sjfins = SJF::getinstance();
 	sjfins->Show();
 	HRN* hrnins = HRN::getinstance();
 	hrnins->Show();
-	RR* rrins = RR::getinstance();
-	rrins->Show();
 }
 
 void Erase(process* pro, vector<process*>& vec) {

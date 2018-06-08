@@ -90,10 +90,10 @@ void SCANHead::setdirection(bool bol) {
 
 int SCANHead::selectnext(int loc, vector<int> vec) {
 	vector<int>::iterator item;
-	int ans=-1;
+	int ans = -1;
 	while (-1 == ans) {
 		if (false == this->getdirection()) {
-			for (item = vec.end()-1; item != vec.begin()-1; item--) {
+			for (item = vec.end() - 1; item != vec.begin() - 1; item--) {
 				if (*item <= loc) {
 					ans = *item;
 					return ans;

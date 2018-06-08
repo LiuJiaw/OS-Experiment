@@ -13,7 +13,7 @@
 
 int main() {
 	for (int i = 0; i < TIME; i++) {
-		int RamNum = random()%RANGE;
+		int RamNum = random() % RANGE;
 		ShowTimeInfo(i, RamNum);
 		LRU::getInstance()->Push(RamNum);
 		FIFO::getInstance()->Push(RamNum);

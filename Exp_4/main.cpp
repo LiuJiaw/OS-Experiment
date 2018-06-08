@@ -39,30 +39,30 @@ void getram(vector<int>& ramnum, vector<int>& ramnum1) {
 
 void SSTF(vector<int>& ramnum) {
 	SSTFHead* SSTFins = SSTFHead::getinstance();
-	int distance=0;
+	int distance = 0;
 	SSTFins->tolocation(RANGE / 2);
 	cout << "*****************SSTF:********************" << endl;
 	while (ramnum.size()) {
 		int loc = SSTFins->selectnext(SSTFins->getlocation(), ramnum);
 		cout << "当前所处位置:" << SSTFins->getlocation() << "\t下一处位置:" << loc
 				<< endl;
-		distance+= abs(loc-SSTFins->getlocation());
+		distance += abs(loc - SSTFins->getlocation());
 		SSTFins->tolocation(loc, ramnum);
 	}
-	cout<<"磁头总移动距离为:"<<distance<<endl;
+	cout << "磁头总移动距离为:" << distance << endl;
 }
 
 void SCAN(vector<int>& ramnum) {
 	SCANHead* SCANins = SCANHead::getinstance();
-	int distance=0;
+	int distance = 0;
 	SCANins->tolocation(RANGE / 2);
 	cout << "*****************SCAN:********************" << endl;
 	while (ramnum.size()) {
 		int loc = SCANins->selectnext(SCANins->getlocation(), ramnum);
 		cout << "当前所处位置:" << SCANins->getlocation() << "\t下一处位置:" << loc
 				<< endl;
-		distance+=abs(loc-SCANins->getlocation());
+		distance += abs(loc - SCANins->getlocation());
 		SCANins->tolocation(loc, ramnum);
 	}
-	cout<<"磁头总移动距离为:"<<distance<<endl;
+	cout << "磁头总移动距离为:" << distance << endl;
 }
